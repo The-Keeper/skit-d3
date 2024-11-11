@@ -1,9 +1,12 @@
 import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetAttributify({ /* preset options */}),
-    presetUno(),
-    // ...custom presets
-  ],
+    content: {
+        filesystem: ['src/**/*.svelte', 'src/**/*.html', './node_modules/stdf/**/*.svelte'],
+    },
+    presets: [
+        presetAttributify({ /* preset options */ }),
+        presetUno(),
+        // ...custom presets
+    ],
 })

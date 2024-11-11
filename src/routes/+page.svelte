@@ -19,7 +19,7 @@
 
 	{#if browser}
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div on:mousemove={onMousemove}>
+		<div onmousemove={onMousemove}>
 			<LinePlot {data} />
 		</div>
 
@@ -33,7 +33,7 @@
 		>
 			<button
 				class="rounded-sm border border-lgt-con px-2 py-1 dark:border-drk-con"
-				on:click={() => {
+				onclick={() => {
 					document.documentElement.classList.toggle('dark');
 					if (document.documentElement.classList.contains('dark')) {
 						localStorage.theme = 'dark';
@@ -47,7 +47,7 @@
 
 			<button
 				class="rounded-sm border border-lgt-con px-2 py-1 dark:border-drk-con"
-				on:click={() => {
+				onclick={() => {
 					// Whenever the user explicitly chooses to respect the OS preference
 					localStorage.removeItem('theme');
 					document.documentElement.classList.remove('dark');

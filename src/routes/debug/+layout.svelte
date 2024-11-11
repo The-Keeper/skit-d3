@@ -1,5 +1,8 @@
 <script>
 	import { browser } from '$app/environment';
+
+	let { children } = $props();
+
 </script>
 
 <!-- Theme toggle   -->
@@ -14,7 +17,7 @@
 	>
 		<button
 			class="border-lgt-con dark:border-drk-con rounded-sm border px-2 py-1"
-			on:click={() => {
+			onclick={() => {
 				document.documentElement.classList.toggle('dark');
 				if (document.documentElement.classList.contains('dark')) {
 					localStorage.theme = 'dark';
@@ -28,7 +31,7 @@
 
 		<button
 			class="border-lgt-con dark:border-drk-con rounded-sm border px-2 py-1"
-			on:click={() => {
+			onclick={() => {
 				// Whenever the user explicitly chooses to respect the OS preference
 				localStorage.removeItem('theme');
 				document.documentElement.classList.remove('dark');
@@ -47,4 +50,4 @@
 	</div>
 {/if}
 
-<slot />
+{@render children()}
